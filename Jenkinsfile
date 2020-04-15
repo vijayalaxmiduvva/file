@@ -6,9 +6,9 @@ pipeline {
         
         stage ('Git Checkout') {
             steps {
-                git branch: 'Master'
-                    credentialsId: 
-                    url:
+                git branch: 'master'
+                    credentialsId:'a4280235-505b-4a86-88ee-3977b9b2ae15' 
+                    url:  'https://github.com/vijayalaxmiduvva/file.git'
             }           
         }   
         stage('Compile Stage') {
