@@ -21,16 +21,16 @@ pipeline {
         }
 	    
     post {
-          success {
+           success {
                emailext (
-                  to: "duvva.raghavendra@gmail.com",
+                  to: '$DEFAULT_RECIPIENTS',
                   subject: "SUCCESS",
                   body: "SUCCESS!"
                 )
             }
-         failure {
+          failure {
 	       emailext (
-                  to: "duvva.raghavendra@gmail.com",
+                  to: '$DEFAULT_RECIPIENTS',
                   subject: "FAILURE",
                   body: "FAILURE!"
                 )
