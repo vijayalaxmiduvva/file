@@ -18,23 +18,6 @@ pipeline {
             steps {
                 sh "mvn tomcat:redeploy"
             }
-        }
-	    
-    post {
-           success {
-               emailext (
-                  to: '$DEFAULT_RECIPIENTS',
-                  subject: "SUCCESS",
-                  body: "SUCCESS!"
-                )
-            }
-          failure {
-	       emailext (
-                  to: '$DEFAULT_RECIPIENTS',
-                  subject: "FAILURE",
-                  body: "FAILURE!"
-                )
-            }
-        }
+	}
     }
 } 
