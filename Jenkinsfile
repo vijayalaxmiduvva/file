@@ -19,5 +19,22 @@ pipeline {
                 sh "mvn tomcat:redeploy"
             }
         }
-   }
-}
+	    
+		post {
+          success {
+               emailext (
+                  to: duvva.raghavendra@gmail.com,
+                  subject: "SUCCESS",
+                  body: "SUCCESS!"
+                )
+            }
+         failure {
+			  emailext (
+                  to: duvva.raghavendra@gmail.com,
+                  subject: "FAILURE",
+                  body: "FAILURE!"
+                )
+            }
+        }
+    }
+} 
