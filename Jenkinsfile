@@ -20,7 +20,7 @@ pipeline {
             }
         }
 	    
-		post {
+    post {
           success {
                emailext (
                   to: "duvva.raghavendra@gmail.com",
